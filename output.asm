@@ -1,0 +1,39 @@
+INCLUDE Irvine32.inc 
+ 
+ 
+ .code 
+ main PROC 
+MOVE AX , 22 
+ PUSH AX 
+MOVE AX , 50 
+ PUSH AX 
+MOVE AX , 36 
+ PUSH AX 
+MOVE AX , 12 
+ PUSH AX 
+POP BX 
+ POP AX 
+ MOV DX,0 
+ DIV BX 
+ PUSH AX 
+MOVE AX , 16 
+ PUSH AX 
+POP BX 
+ POP AX 
+ SUB AX,BX 
+ PUSH AX 
+POP AX 
+ POP BX 
+ ADD AX,BX 
+ PUSH AX 
+POP AX 
+ POP BX 
+ MUL BX 
+ PUSH AX 
+ MOV EAX,0 
+ POP AX 
+ 
+ call WriteDec 
+ exit 
+ main ENDP 
+ END main
